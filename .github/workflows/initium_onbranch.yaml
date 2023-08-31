@@ -5,9 +5,6 @@ on:
  pull_request:
    types: [opened, synchronize, reopened, closed]
 
-permissions:
-  packages: write
-  # issues: write
 
 jobs:
   on_pr:
