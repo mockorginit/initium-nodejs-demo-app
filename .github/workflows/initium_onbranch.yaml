@@ -6,7 +6,8 @@ on:
    types: [opened, synchronize, reopened, closed]
 
 permissions:
-  packages: read
+  packages: write
+  # issues: write
 
 jobs:
   on_pr:
