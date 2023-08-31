@@ -18,7 +18,7 @@ jobs:
 
       - name: build and deploy application
         #if: github.event.action != 'closed'
-        uses: docker://ghcr.io/mockorginit/initium-cli:initium-bug-delete-br
+        uses: docker://ghcr.io/nearform/initium-cli:initium-fix-branchname-paramenter-on-onbranch
         with:
           args: onbranch
         env:
@@ -38,9 +38,9 @@ jobs:
         run: echo ${{ github.event.pull_request.head.ref }}
 
       - name: delete application
-        uses: docker://ghcr.io/mockorginit/initium-cli:initium-bug-delete-br
+        uses: docker://ghcr.io/nearform/initium-cli:initium-fix-branchname-paramenter-on-onbranch
         with:
-          args: onbranch --clean --branchName ${{ github.event.pull_request.head.ref }}
+          args: onbranch --clean --branch-name ${{ github.event.pull_request.head.ref }}
         env:
           INITIUM_REGISTRY_USER: ${{ github.actor }}
           INITIUM_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
