@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v3
     
       - name: Validate Refs
-        run: echo ${{ github.event.pull_request.head.ref }}
+        run: echo ${{ github.head_ref }}
 
       - name: delete application
         uses: docker://ghcr.io/nearform/initium-cli:initium-fix-branchname-paramenter-on-onbranch
