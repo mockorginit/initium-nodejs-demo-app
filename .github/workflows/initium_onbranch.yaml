@@ -5,6 +5,10 @@ on:
  pull_request:
    types: [opened, synchronize, reopened, closed]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   on_pr:
     if: github.event.action != 'closed'
@@ -28,6 +32,7 @@ jobs:
 
   closed_pr:
     if: github.event.action == 'closed'
+    concurrency: ${{ github.head_ref }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
