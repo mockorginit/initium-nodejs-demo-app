@@ -1,7 +1,0 @@
-app-name: initium-nodejs-demo-app
-cluster-endpoint: null
-container-registry: ghcr.io/mockorginit
-default-branch: main
-dockerfile-name: null
-registry-user: null
-runtime-version: null
